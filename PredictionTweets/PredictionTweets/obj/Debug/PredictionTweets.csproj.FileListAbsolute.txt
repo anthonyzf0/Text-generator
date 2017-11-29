@@ -1,0 +1,7 @@
+C:\Users\antho\source\repos\PredictionTweets\PredictionTweets\bin\Debug\PredictionTweets.exe.config
+C:\Users\antho\source\repos\PredictionTweets\PredictionTweets\bin\Debug\PredictionTweets.exe
+C:\Users\antho\source\repos\PredictionTweets\PredictionTweets\bin\Debug\PredictionTweets.pdb
+C:\Users\antho\source\repos\PredictionTweets\PredictionTweets\obj\Debug\PredictionTweets.csprojResolveAssemblyReference.cache
+C:\Users\antho\source\repos\PredictionTweets\PredictionTweets\obj\Debug\PredictionTweets.csproj.CoreCompileInputs.cache
+C:\Users\antho\source\repos\PredictionTweets\PredictionTweets\obj\Debug\PredictionTweets.exe
+C:\Users\antho\source\repos\PredictionTweets\PredictionTweets\obj\Debug\PredictionTweets.pdb

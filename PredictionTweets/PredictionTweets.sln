@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2005
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PredictionTweets", "PredictionTweets\PredictionTweets.csproj", "{AFF2997A-6135-4C03-A1EE-A35FA776E388}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AFF2997A-6135-4C03-A1EE-A35FA776E388}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AFF2997A-6135-4C03-A1EE-A35FA776E388}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AFF2997A-6135-4C03-A1EE-A35FA776E388}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AFF2997A-6135-4C03-A1EE-A35FA776E388}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {44F0F6BD-BE08-4EFE-B002-BB2E70AA645A}
+	EndGlobalSection
+EndGlobal
