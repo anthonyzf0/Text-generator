@@ -29,7 +29,7 @@ namespace PredictionTweets
             {
                 String[] words = lines[i].Split();
 
-                if (words.Length < 3) continue;
+                if (words.Length < 4) continue;
 
                 for (int pos = 0; pos < words.Length - 1; pos++)
                 {
@@ -43,15 +43,18 @@ namespace PredictionTweets
                     }
 
                     if (pos < words.Length - 3)
+                    {
                         addConnection(words[pos] + " " + words[pos + 1], words[pos + 2] + " " + words[pos + 3]);
-                    
+                        addConnection(words[pos], words[pos + 1] + " " + words[pos + 2] + " " + words[pos + 3]);
+                        addConnection(words[pos] + " " + words[pos + 1] + " " + words[pos + 2], words[pos + 3]);
+                    }
                 }
 
                 int a = words.Length;
 
-                addConnection(words[a - 2] + " " + words[a - 1] + " " + words[a - 2], "--");
-                addConnection(words[a - 1] + " " + words[a - 2], "--");
-                addConnection(words[a - 2], "--");
+                addConnection(words[a - 3] + " " + words[a - 2] + " " + words[a - 1], "--");
+                addConnection(words[a - 2] + " " + words[a - 1], "--");
+                addConnection(words[a - 1], "--");
 
                 addConnection("++", words[0]);
                 addConnection("++", words[0] + " " + words[1]);
@@ -72,8 +75,11 @@ namespace PredictionTweets
             interpritText(file);
             Console.WriteLine("Done!");
 
-            Console.WriteLine("How large lines do you want?");
+            Console.WriteLine("How many word per line do you want? (3 - 16)");
             int num = Convert.ToInt32(Console.ReadLine());
+
+            if (num < 3) num = 3;
+            if (num > 16) num = 16;
 
             Console.WriteLine("______________\n");
 

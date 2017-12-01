@@ -12,3 +12,10 @@ C:\Users\antho\OneDrive\Documents\GitHub\Text-generator\PredictionTweets\Predict
 C:\Users\antho\OneDrive\Documents\GitHub\Text-generator\PredictionTweets\PredictionTweets\obj\Debug\PredictionTweets.csproj.CoreCompileInputs.cache
 C:\Users\antho\OneDrive\Documents\GitHub\Text-generator\PredictionTweets\PredictionTweets\obj\Debug\PredictionTweets.exe
 C:\Users\antho\OneDrive\Documents\GitHub\Text-generator\PredictionTweets\PredictionTweets\obj\Debug\PredictionTweets.pdb
+C:\Users\eahscs\Desktop\Text-generator\PredictionTweets\PredictionTweets\bin\Debug\PredictionTweets.exe.config
+C:\Users\eahscs\Desktop\Text-generator\PredictionTweets\PredictionTweets\bin\Debug\PredictionTweets.exe
+C:\Users\eahscs\Desktop\Text-generator\PredictionTweets\PredictionTweets\bin\Debug\PredictionTweets.pdb
+C:\Users\eahscs\Desktop\Text-generator\PredictionTweets\PredictionTweets\obj\Debug\PredictionTweets.csprojResolveAssemblyReference.cache
+C:\Users\eahscs\Desktop\Text-generator\PredictionTweets\PredictionTweets\obj\Debug\PredictionTweets.csproj.CoreCompileInputs.cache
+C:\Users\eahscs\Desktop\Text-generator\PredictionTweets\PredictionTweets\obj\Debug\PredictionTweets.exe
+C:\Users\eahscs\Desktop\Text-generator\PredictionTweets\PredictionTweets\obj\Debug\PredictionTweets.pdb
