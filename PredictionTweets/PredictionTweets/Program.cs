@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -24,64 +25,95 @@ namespace PredictionTweets
         static void interpritText(String s)
         {
             String[] lines = s.Split('\n');
-            for(int i=0; i<lines.Length;i++)
+            for (int i = 0; i < lines.Length; i++)
             {
                 String[] words = lines[i].Split();
-                if (words.Length < 4) continue;
 
-                for (int j = 0; j < words.Length - 3; j++)
-                    addConnection(words[j] + " " + words[j+1], words[j + 2] + " " + words[j + 3]);
-                for (int j = 0; j < words.Length - 1; j++) 
-                    addConnection(words[j], words[j + 1]);
+                if (words.Length < 3) continue;
 
-                addConnection(words[words.Length - 1], "\n");
-                addConnection(words[words.Length - 2] + " " + words[words.Length - 1], "\n");
-                addConnection(words[words.Length - 3] + " " + words[words.Length - 2], "\n");
+                for (int pos = 0; pos < words.Length - 1; pos++)
+                {
+                    
+                    addConnection(words[pos], words[pos + 1]);
+
+                    if (pos < words.Length - 2)
+                    {
+                        addConnection(words[pos] + " " + words[pos + 1], words[pos + 2]);
+                        addConnection(words[pos],  words[pos + 1] + " " +words[pos + 2]);
+                    }
+
+                    if (pos < words.Length - 3)
+                        addConnection(words[pos] + " " + words[pos + 1], words[pos + 2] + " " + words[pos + 3]);
+                    
+                }
+
+                int a = words.Length;
+
+                addConnection(words[a - 2] + " " + words[a - 1] + " " + words[a - 2], "--");
+                addConnection(words[a - 1] + " " + words[a - 2], "--");
+                addConnection(words[a - 2], "--");
+
+                addConnection("++", words[0]);
+                addConnection("++", words[0] + " " + words[1]);
+                addConnection("++", words[0] + " " + words[1] + " " + words[2]);
+                
             }
         }
-
+        
         static void Main(string[] args)
-        {   
-            //Pass the file path and file name to the StreamReader constructor
-            StreamReader sr = new StreamReader(Directory.GetCurrentDirectory() + "\\..\\..\\Files\\moon.txt");
-            String file = sr.ReadToEnd();
-            interpritText(file);
-            sr.Close();
-
-
+        {
             Random rand = new Random();
-            for (int i = 0; i < 50; i++)
+
+            //Loads a file for use
+            String file = FileLoader.loadFile();
+            Console.Clear();
+
+            Console.WriteLine("Reading file....");
+            interpritText(file);
+            Console.WriteLine("Done!");
+
+            Console.WriteLine("How large lines do you want?");
+            int num = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("______________\n");
+
+            int outputs = 8;
+            while (true)
             {
-                List<String> output = new List<string>();
-                String word = wordMap.ElementAt(rand.Next(wordMap.Keys.Count())).Key;
-                while (true)
+                String baseWord = "++";
+
+                String output = "";
+                int count = 0;
+
+                for (int i = 0; i< num+4; i++)
                 {
-                    output.Add(word);
+                    baseWord = wordMap[baseWord].getNext();
 
-                    if (output.Count > 2)
-                    {
+                    if (baseWord == "--") break;
 
-                        bool two = rand.NextDouble() < 0.5;
-                        if (two)
-                        {
-                            String key = output[output.Count-2]+" "+output[output.Count - 1];
-                            if (wordMap.ContainsKey(key))
-                                word = wordMap[key].getNext();
-                            else
-                                word = wordMap[output[output.Count - 1]].getNext();
-                        }
-                        else
-                            word = wordMap[output[output.Count - 1]].getNext();
-                    }
-                    else
-                        word = wordMap[output[output.Count - 1]].getNext();
+                    output += " " + baseWord;
+                    count++;
                     
-                    if (word == "\n")  break;
+                    if (!wordMap.ContainsKey(baseWord) || count > num + 4) break;
                 }
-                foreach (String a in output) Console.Write(a+" ");
-                Console.WriteLine();
+
+                if (count > num - 2 && count < num + 2)
+                {
+                    Console.WriteLine(output);
+                    outputs--;
+
+                    if (outputs == 0) break;
+                }
             }
 
+            Console.WriteLine("______________\n");
+
+            Console.WriteLine("\n\nPress enter to restart.");
+            Console.ReadLine();
+
+            var fileName = Assembly.GetExecutingAssembly().Location;
+            System.Diagnostics.Process.Start(fileName);
+            
         }
     }
 }

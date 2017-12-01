@@ -50,8 +50,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Files\file.txt" />
-    <Content Include="Files\fin.txt" />
+    <Content Include="Files\donald.txt" />
+    <Content Include="Files\finn.txt" />
     <Content Include="Files\getty.txt" />
     <Content Include="Files\gwen.txt" />
     <Content Include="Files\indepen.txt" />
@@ -59,6 +59,7 @@
     <Content Include="Files\moon.txt" />
     <Content Include="Files\raven.txt" />
     <Content Include="Files\romeo.txt" />
+    <Compile Include="Source\FileLoader.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
